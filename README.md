@@ -8,12 +8,12 @@
 ## 在文件夹根目录下执行以下命令
 `webpack ./entry.js bundle.js`
 
-![](./base/1.png)
+![](./app/img/1.png)
 
 ## 再添加一个文件content.js,在entry.js中引入该模块
 执行命令,webpack会分析你入口文件对于其他文件的依赖，这些文件（通常称为模块）也会被包含在bundle.js中
 
- ![](./base/2.png)
+ ![](./app/img/2.png)
  
 # 2 使webpack支持css
  
@@ -24,11 +24,11 @@
 ## 添加style.css,同样在entry.js加入引用
  执行命令 `webpack ./entry.js bundle.js --module-bind 'css=style!css'` ,后面参数表示根据模块类型（扩展名）来自动绑定需要的loader
  
-# 2 配置文件
+# 3 配置文件
 将入口 输出文件及路径 模块加载器等可以配置到webpack.config.js文件,之后仅执行 `webpack` 进行编译
 
-# 更友好地输出,添加进度显示
+# 4 更友好地输出,添加进度显示
 `webpack --progress --colors`
 
-# 监听模式(热更新)
+# 5 监听模式(热更新)
 `webpack --progress --colors --watch`

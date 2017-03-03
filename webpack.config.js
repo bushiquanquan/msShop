@@ -1,8 +1,8 @@
 module.exports = {
-    entry: './entry.js',
+    entry: __dirname + '/app/entry.js',
     output: {
-        // 当前模块文件所在目录的完整绝对路径
-        path: __dirname,
+        // __dirname当前模块文件所在目录的完整绝对路径
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
     module: {
