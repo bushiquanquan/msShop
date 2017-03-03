@@ -1,10 +1,12 @@
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // 配置生成Source Maps，选择合适的选项
     devtool: 'eval-source-map',
     entry: __dirname + '/app/entry.js',
     output: {
         // __dirname当前模块文件所在目录的完整绝对路径
-        path: __dirname + '/public',
+        path: __dirname + '/build',
         filename: 'bundle.js'
     },
     module: {
@@ -22,5 +24,13 @@ module.exports = {
                 loader: 'json-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        //  添加压缩文件的版权信息插件
+        new webpack.BannerPlugin('Copyright Mr yuan  inc.'),
+        // new 一个这个插件的实例，并传入相关的参数
+        new HtmlWebpackPlugin({
+            template: __dirname + '/app/index.tpl.html'
+        })
+    ]
 };
