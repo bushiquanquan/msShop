@@ -31,6 +31,14 @@ module.exports = {
         // new 一个这个插件的实例，并传入相关的参数
         new HtmlWebpackPlugin({
             template: __dirname + '/app/index.tpl.html'
-        })
-    ]
+        }),
+        // 热加载插件
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        colors: true,
+        historyApiFallback: true,
+        inline: true,
+        hot: true
+    }
 };

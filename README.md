@@ -62,4 +62,9 @@ Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babe
 ` new webpack.BannerPlugin('Copyright Mr yuan  inc.')`
 ## HtmlWebpackPlugin
 这个插件的作用是依据一个简单的模板，帮你生成最终的Html5文件，这个文件中自动引用了你打包后的JS文件。每次编译都在文件名中插入一个不同的哈希值。
+会自动添加所依赖的 css, js，favicon等文件
 安装`npm install --save-dev html-webpack-plugin`
+
+# Hot Module Replacement热更新
+- **在webpack配置文件中添加HMR插件；** 
+- **在Webpack Dev Server中添加“hot”参数** ：
