@@ -68,3 +68,12 @@ Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babe
 # Hot Module Replacement热更新
 - **在webpack配置文件中添加HMR插件；** 
 - **在Webpack Dev Server中添加“hot”参数** ：
+
+# 产品阶段的构建
+在产品阶段，可能还需要对打包的文件进行额外的处理，比如说优化，压缩，缓存以及分离CSS和JS,创建一个“webpack.production.config.js”的文件作为发布阶段的配置
+- **OccurrenceOrderPlugin** ：为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+- **UglifyJsPlugin** ：压缩JS代码 ``
+- **ExtractTextPlugin** ：分离CSS和JS文件`npm install --save-dev extract-text-webpack-plugin`
+
+# 缓存
+用缓存的最好方法是保证你的文件名和文件内容是匹配的（内容改变，名称相应改变）,webpack可以把一个哈希值添加到打包的文件名中，使用方法如下,添加特殊的字符串混合体（`[name]`, `[id]` and `[hash]`）到输出文件名前

@@ -39,7 +39,7 @@ module.exports = {
         }),
         // OccurenceOrderPlugin ==> OccurrenceOrderPlugin
         new webpack.optimize.OccurrenceOrderPlugin(),
-        // new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
         // 分离css和js文件
         new ExtractTextPlugin('[name]-[hash].css'),
         // 热加载插件
