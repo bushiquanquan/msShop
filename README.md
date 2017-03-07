@@ -54,7 +54,6 @@
  npm一次性安装多个依赖模块，模块之间用空格隔开
 `npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react`
 Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babel具有非常多的配置选项，在单一的webpack.config.js文件中进行配置往往使得这个文件显得太复杂，因此一些开发者支持把babel的配置选项放在一个单独的名为 `.babelrc` 的配置文件中
-
 # 插件（Plugins）
 插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用.
 在webpack.config.js中添加`plugins`配置
@@ -64,6 +63,11 @@ Babel其实可以完全在webpack.config.js中进行配置，但是考虑到babe
 这个插件的作用是依据一个简单的模板，帮你生成最终的Html5文件，这个文件中自动引用了你打包后的JS文件。每次编译都在文件名中插入一个不同的哈希值。
 会自动添加所依赖的 css, js，favicon等文件
 安装`npm install --save-dev html-webpack-plugin`
+
+##  CSS的处理平台-PostCSS
+可以帮助你的CSS实现更多的功能，举例来说如何使用PostCSS，我们使用PostCSS来为CSS代码自动添加适应不同浏览器的CSS前缀.
+添加配置文件`postcss.config`
+`npm install --save-dev postcss-loader autoprefixer`
 
 # Hot Module Replacement热更新
 - **在webpack配置文件中添加HMR插件；** 

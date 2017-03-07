@@ -18,7 +18,7 @@ module.exports = {
                 loader: 'babel-loader'
             },
             // {
-            //     test: /\.css$/, loader: 'style-loader!css-loader'
+            //     test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader'
             // },
             {
                 test: /\.json$/,
@@ -26,7 +26,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+                // webpack2语法
+                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!postcss-loader'})
             }
         ]
     },
